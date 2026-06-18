@@ -27,7 +27,7 @@ const menu = [
               sizeButtons += `
                     <button class="size-btn" onclick="addToCart(${item.id}, '${size}')">
                ${size} - ${item.sizes[size]} EGP
-              </button>`;
+                  </button>`;
     }
 
    itemDiv.innerHTML = `

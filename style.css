@@ -15,7 +15,5 @@
                            .cart-item button { padding : 2px 8px ; margin : 0 2px ; cursor : pointer ; }
            #checkout-btn { width : 100%; background-color : #6f4e37; color : white; border : none ; padding : 10px ; border-radius : 8px ; margin-top : 10px; cursor : pointer ; }
      .hidden { display : none ; }
-  #order-confirmation { margin-top : 15px ; background-color : #e8f5e9; border-radius : 8px; padding : 10px ; text-align : center ; color : #2e7d32 ; }
+  #order-confirmation { margin-top : 15px ; background-color : #e8f5e9; border-radius : 8px; padding : 10px ; text-align : center ; color : #2e7d33 ; }
 
-
-  
