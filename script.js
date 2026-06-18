@@ -100,3 +100,35 @@ let cart = [] ;
             totalElement.textContent = `Total: ${total} EGP`;
      }
 }
+
+
+
+   document.getElementById("checkout-btn").addEventListener("click", () =>  {
+         if (cart.length === 0 ) {
+          alert("your cart is empty! Please select a drink first.")  ;
+                   return   ;
+          }
+
+      const pickupTime = calculatepickupTime()   ;
+              document.getElementById("pickup-time").textContent = `Pickup Time: ${pickupTime}` ;
+           document.getElementById("order-confirmation").classList.remove("hidden")  ;
+
+  cart = [] ;
+  renderCart() ;
+});
+
+        function calculatePickupTime () {
+            
+        const maxPrepTime = Math.max(...cart.map(c => c.prepTime)) ;
+                           const extraItemsBuffer = (cart.length - 1) * 1  ;
+               const totalMinutes = maxPrepTime + extraItemsBuffer ;
+
+           const now = new Date () ;
+       now.setMinutes (now.getMinutes() + totalMinutes)  ;
+               const hours = now.getHours().toString().padStart( 2 , "0")  ;
+          const minutes = now.getMinutes().toString().padStart( 2 , "0") ;
+
+
+
+      return `${hours}:${minutes} (In about ${totalMinutes} minutes)` ;
+   }
