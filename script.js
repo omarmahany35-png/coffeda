@@ -4,7 +4,7 @@ const menu = [
   
   { id : 2 , name : "Latte" , image : "imeges/latte.jpg" , prepTime : 4 , sizes : { small : 35 , medium : 45 , large : 55 } } ,
    
-       { id : 3 , name : "Cappuccino" , image : "imeges/Cappuccino.jpg", prepTime: 4 , sizes : { small : 35 , medium : 45 , large : 55 } } ,
+       { id : 3 , name : "Cappuccino" , image : "imeges/Cappuccino .jpg", prepTime: 4 , sizes : { small : 35 , medium : 45 , large : 55 } } ,
   
    { id : 4 , name : "Americano" , image : "imeges/Americano.jpg" , prepTime : 3, sizes : { small : 30 , medium : 38 , large : 45 } },
    
@@ -103,16 +103,18 @@ let cart = [] ;
 
 
 
-   document.getElementById("checkout-btn").addEventListener("click", () =>  {
+   document.getElementById("confirm-btn").addEventListener("click", () =>  {
          if (cart.length === 0 ) {
           alert("your cart is empty! Please select a drink first.")  ;
                    return   ;
           }
 
-      const pickupTime = calculatepickupTime()   ;
-              document.getElementById("pickup-time").textContent = `Pickup Time: ${pickupTime}` ;
-           document.getElementById("order-confirmation").classList.remove("hidden")  ;
-
+      const pickupTime = calculatePickupTime()   ;
+             const orderStatus = document.getElementById("order-status");
+if (orderStatus) {
+        orderStatus.innerHTML = `Order Confirmed ✅ <br> Pickup Time: ${pickupTime}`;
+                orderStatus.style.display = "block";
+}
   cart = [] ;
   renderCart() ;
 });
@@ -132,3 +134,5 @@ let cart = [] ;
 
       return `${hours}:${minutes} (In about ${totalMinutes} minutes)` ;
    }
+
+    
