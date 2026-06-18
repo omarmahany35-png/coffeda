@@ -6,9 +6,9 @@ const menu = [
    
        { id : 3 , name : "Cappuccino" , image : "imeges/Cappuccino .jpg", prepTime: 4 , sizes : { small : 35 , medium : 45 , large : 55 } } ,
   
-   { id : 4 , name : "Americano" , image : "imeges/Americano.jpg" , prepTime : 3, sizes : { small : 30 , medium : 38 , large : 45 } },
+     { id : 4 , name : "Americano" , image : "imeges/Americano.jpg" , prepTime : 3, sizes : { small : 30 , medium : 38 , large : 45 } },
    
-     { id : 5 , name : "Mocha", image : "imeges/Mocha.jpg", prepTime : 5 , sizes : { small : 40 , medium : 50 , large : 60  } },
+       { id : 5 , name : "Mocha", image : "imeges/Mocha.jpg", prepTime : 5 , sizes : { small : 40 , medium : 50 , large : 60  } },
    
      { id : 6 , name : "Iced Coffee" , image : "imeges/iced coffee.jpg", prepTime : 3 , sizes : { small : 35 , medium : 42 , large : 50  } }
 ];
