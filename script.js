@@ -119,29 +119,24 @@ if (orderStatus) {
   renderCart() ;
 });
 
-        function calculatePickupTime () {
+        function calculatePickupTime() {
+    let totalMinutes = 0 ;
 
-          let totalCups = 0 ;
-          cart.forEach(c=>{
-            totalCups += c.quantity ;
-         });
 
-         const maxPrepTime = Math.max(...cart.map(c => c.prepTime));
+    cart.forEach(c => {
+
+        totalMinutes += c.prepTime * c.quantity ;
         
+    }) ;
 
-         const extraItemsBuffer = (totalCups - 1) * 1 ;
-          
-        const totalMinutes = maxPrepTime + extraItemsBuffer ;
-
+    const now = new Date() ;
 
 
-         const now =new Date();
-         now.setMinutes(now.getMinutes() + totalMinutes);
-            const hours = now.getHours().toString().padStart(2 , "0") ;
-            const minutes = now.getMinutes().toString().padStart(2, "0") ;
-        
-        
-         return `${hours}:${minutes} (In about ${totalMinutes} minutes)` ;
+     now.setMinutes(now.getMinutes() + totalMinutes) ;
 
+      const hours = now.getHours().toString().padStart(2, "0") ;
+      const minutes = now.getMinutes().toString().padStart(2, "0") ;
+
+    return `${hours}:${minutes} (In about ${totalMinutes} minutes)` ;
 }
 
